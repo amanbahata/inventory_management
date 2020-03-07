@@ -18,17 +18,17 @@ public class SupplierResource {
         private SupplierDaoService service;
 
         @GetMapping
-        List<Supplier> retrieveAllOrders(){
+        List<Supplier> retrieveAllSuppliers(){
             return service.findAll();
         }
 
         @PostMapping
-        Supplier retrieveOrder(@RequestBody Supplier supplier){
+        Supplier saveSupplier(@RequestBody Supplier supplier){
             return service.save(supplier);
         }
 
         @DeleteMapping("/{id}")
-        Supplier deleteOrder(@PathVariable long id){
+        Supplier deleteSupplier(@PathVariable long id){
             Supplier order = service.deleteById(id);
             if (order == null){
                 throw new OrderNotFoundException("id - " + id);
@@ -37,7 +37,7 @@ public class SupplierResource {
         }
 
         @PutMapping("/{id}")
-        Supplier updatePurchase(@RequestBody Supplier supplier, @PathVariable long id){
+        Supplier updateSupplier(@RequestBody Supplier supplier, @PathVariable long id){
             Supplier updatedSupplier = service.updateById(supplier, id);
             if (updatedSupplier == null){
                 throw new OrderNotFoundException("id - " + id);

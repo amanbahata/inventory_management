@@ -25,7 +25,7 @@ public class PurchaseResource {
         }
 
         @PostMapping
-        Purchase retrievePurchase(@RequestBody Purchase purchase){
+        Purchase savePurchase(@RequestBody Purchase purchase){
             return service.save(purchase);
         }
 

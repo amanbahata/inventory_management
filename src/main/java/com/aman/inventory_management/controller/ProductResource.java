@@ -21,7 +21,7 @@ public class ProductResource {
     }
 
     @PostMapping
-    Product retrieveProduct(@RequestBody Product product){
+    Product saveProduct(@RequestBody Product product){
         return service.save(product);
     }
 
