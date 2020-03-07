@@ -24,7 +24,7 @@ public class OrdersResource {
         }
 
         @PostMapping
-        Order retrieveOrder(@RequestBody Order order){
+        Order saveOrder(@RequestBody Order order){
             return service.save(order);
         }
 
@@ -38,7 +38,7 @@ public class OrdersResource {
         }
 
         @PutMapping("/{id}")
-        Order updatePurchase(@RequestBody Order order, @PathVariable long id){
+        Order updateOrder(@RequestBody Order order, @PathVariable long id){
             Order updatedOrder = service.updateById(order, id);
             if (order == null){
                 throw new OrderNotFoundException("id - " + id);
